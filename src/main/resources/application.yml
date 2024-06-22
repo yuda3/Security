@@ -23,4 +23,4 @@ logging:
   file:
     path: /log/log.txt
   level:
-    root: info
+    web: debug
