@@ -18,3 +18,9 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+
+logging:
+  file:
+    path: /log/log.txt
+  level:
+    root: info
