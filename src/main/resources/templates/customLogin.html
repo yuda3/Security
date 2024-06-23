@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional: You can add custom styles here */
+        .login-form {
+            width: 300px;
+            margin: auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<h2>Login</h2>
+<div th:if="${error}">
+    <p style="color:red">Login failed, Please try again.</p>
+</div>
+<div th:if="${logout}">
+    <p style="color:red">Logout Success, </p>
+</div>
+<form class="login-form" th:action="@{/loginProcess}" method="post">
+    <h2 class="text-center">Login</h2>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="username" required="required" name="username">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder="password" required="required" name="password">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" >Log in</button>
+    </div>
+</form>
+<form th:action="@{/logout}" method="post">
+    <button type="submit" class="btn btn-primary btn-block" >Log out</button>
+</form>
+
+<!-- Bootstrap JS and dependencies (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
